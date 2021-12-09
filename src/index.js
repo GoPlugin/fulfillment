@@ -1,6 +1,4 @@
 const setFulFilment = async (web3,accounts) => {
-      
-        
     
     let  nodeaddress, bool, contractaddr;
 
@@ -15,7 +13,7 @@ const setFulFilment = async (web3,accounts) => {
     });
     $("#setFulfilment").on("click", async (e) => {
         e.preventDefault();
-        const data = await $.getJSON("./abi.json");
+        const data = await $.getJSON("./src/abi.json");
         console.log("data",data)
         const oracleContract = new web3.eth.Contract(
             data,
@@ -31,7 +29,7 @@ const setFulFilment = async (web3,accounts) => {
                 .on("transactionHash", function (transactionHash) {
                     console.log("transactionhahs", transactionHash)
                     $("#result").html(`<div class="alert alert-success fade in alert-dismissible show" style="margin-top:18px;">
-                      <strong>Success!</strong> <a href="https://explorer.apothem.network/tx/${transactionHash}>View Transaction</a>
+                      <strong>Success!</strong> <a href="https://explorer.xinfin.network/tx/${transactionHash}" target="_blank">View Transaction</a>
                    </div>`);
                   
             })
