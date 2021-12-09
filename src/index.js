@@ -1,4 +1,7 @@
 const setFulFilment = async (web3,accounts) => {
+      
+        
+    
     let  nodeaddress, bool, contractaddr;
 
     $("#bool").on("change", (e) => {
@@ -26,18 +29,25 @@ const setFulFilment = async (web3,accounts) => {
                 .setFulfillmentPermission(nodeaddress, bool)
                 .send({ from: accounts[0], gas: "210000" })
                 .on("transactionHash", function (transactionHash) {
-                console.log("transactionhahs", transactionHash)
+                    console.log("transactionhahs", transactionHash)
+                    $("#result").html(`<div class="alert alert-success fade in alert-dismissible show" style="margin-top:18px;">
+                      <strong>Success!</strong> <a href="https://explorer.apothem.network/tx/${transactionHash}>View Transaction</a>
+                   </div>`);
+                  
             })
     });
 };
 
 
 async function mainFunc() {
+ 
     const web3 = await getWeb3();
     console.log("Web3", web3);
     const accounts = await web3.eth.getAccounts();
     console.log("Web3", accounts[0]);
+   
     await setFulFilment(web3, accounts);
 }
+
 
 mainFunc();

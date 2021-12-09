@@ -3,25 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Set Fulfilment Operation</title>
+    <title>Set Fulfillment Operation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
 </head>
 <body>
-    <h1>** Set Fulfilment Operation **</h1>
-    <br/>
-
-    <h2></h2>
-    <form id="form">
-        <label for="html">Contract Address</label><br>
-        <input id="contractaddr" type="text" placeholder="contract address"/><br>
-        <label for="html">Node Address</label><br>
-        <input id="nodeaddress" type="text" placeholder="nodeaddress"/><br>
-        <label for="html">Boolean value</label>
-        <input id="bool" type="text" placeholder="Boolean"/>
-        <input type="submit" id="setFulfilment" value="setFulfilment"/><br>
-
-    </form>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <span class="anchor" id="formLogin"></span> 
+                      <!-- form card login -->
+          <div class="card card-outline-secondary">
+            <div class="card-header">
+              <h3 class="mb-0">Set Fulfillment Operation</h3>
+            </div>
+            <div class="card-body">
+                <form id="form" autocomplete="off" class="form"  name="formLogin" role="form">
+                <div class="form-group">
+                  <label for="uname1">Contract Address</label> 
+                        <input class="form-control" id="contractaddr" type="text" placeholder="Contract Address">
+                </div>
+                <div class="form-group">
+                  <label>Node Address</label> 
+                                      <input class="form-control" id="nodeaddress" type="text" placeholder="Node Address">
+                </div>
+                <div class="form-group">
+                    <label>Boolean Value</label> 
+                                        <input  class="form-control" id="nodeaddress" id="bool" type="text" placeholder="Boolean">
+                  </div>
+                  <div id="result"></div> 
+                <button class="btn btn-success btn-lg float-right" type="submit" id="setFulfilment" value="setFulfilment">Set Fulfillment</button>
+              </form>
+            </div><!--/card-block-->
+          </div><!-- /form card login -->
+        </div>
+      </div>
 
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js
+    "></script>
+   
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="node_modules/xdc3/dist/web3.min.js"></script>
     <script type="text/javascript" src="node_modules/@metamask/detect-provider/dist/index.js"></script>
     <!-- <script type="text/javascript" src="node_modules/solc/solcjs"></script> -->
@@ -30,5 +55,9 @@
     <!-- <script src="https://unpkg.com/bro-fs"></script> -->
     <script type ="text/javascript" src="src/util.js"></script>
     <script type="text/javascript" src ="src/index.js"></script>
+ 
+   
+  
+    
 </body>
 </html>
